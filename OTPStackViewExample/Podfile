@@ -7,6 +7,7 @@ target 'OTPStackViewExample' do
 
   # Pods for OTPStackViewExample
   pod 'OTPStackView', :git => 'https://github.com/intan1907/OTPStackView.git', :tag => '1.0.2'
+  pod 'IQKeyboardManager'
 
 end
 

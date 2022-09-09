@@ -1,8 +1,14 @@
 PODS:
+  - IQKeyboardManager (6.5.10)
   - OTPStackView (1.0.2)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - OTPStackView (from `https://github.com/intan1907/OTPStackView.git`, tag `1.0.2`)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
 
 EXTERNAL SOURCES:
   OTPStackView:
@@ -15,8 +21,9 @@ CHECKOUT OPTIONS:
     :tag: 1.0.2
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
   OTPStackView: 00b18d90fc93ece5e24d53fac7e06820e1c416d0
 
-PODFILE CHECKSUM: d8c5101f48b28e66384aec04f28ef074a13ec9c8
+PODFILE CHECKSUM: 76b0d50ce0bb084a2336d59b0cfacafb4d2401fc
 
 COCOAPODS: 1.11.0.beta.2
