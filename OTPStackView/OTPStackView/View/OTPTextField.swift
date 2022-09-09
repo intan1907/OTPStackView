@@ -22,8 +22,6 @@ open class OTPTextField: UITextField {
             public var inactiveBorderColor: UIColor = .lightGray
             public var activeBorderWidth: CGFloat = 2
             public var activeBorderColor: UIColor = .cyan
-            
-            public init() { }
         }
         
         public struct TextInputTraits {
@@ -32,8 +30,6 @@ open class OTPTextField: UITextField {
             public var adjustsFontSizeToFitWidth: Bool = false
             public var keyboardType: UIKeyboardType = .numberPad
             public var autocorrectionType: UITextAutocorrectionType = .yes
-            
-            public init() { }
         }
         
         public var drawing: Drawing = Drawing()
