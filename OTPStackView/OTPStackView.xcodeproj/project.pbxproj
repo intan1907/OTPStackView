@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFA63D4428C9805E00E3D245 /* OTPStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA63D3B28C9805E00E3D245 /* OTPStackView.framework */; };
-		EFA63D4928C9805E00E3D245 /* OTPStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA63D4828C9805E00E3D245 /* OTPStackViewTests.swift */; };
 		EFA63D4A28C9805E00E3D245 /* OTPStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA63D3E28C9805E00E3D245 /* OTPStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFA63D5428C9808400E3D245 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA63D5328C9808400E3D245 /* OTPTextField.swift */; };
 		EFA63D5628C9809D00E3D245 /* OTPStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA63D5528C9809D00E3D245 /* OTPStackView.swift */; };
@@ -16,21 +14,9 @@
 		EFA63D5D28C9DE0300E3D245 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA63D5C28C9DE0300E3D245 /* UITextField+Ext.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EFA63D4528C9805E00E3D245 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EFA63D3228C9805E00E3D245 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EFA63D3A28C9805E00E3D245;
-			remoteInfo = OTPStackView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		EFA63D3B28C9805E00E3D245 /* OTPStackView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OTPStackView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA63D3E28C9805E00E3D245 /* OTPStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTPStackView.h; sourceTree = "<group>"; };
-		EFA63D4328C9805E00E3D245 /* OTPStackViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTPStackViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFA63D4828C9805E00E3D245 /* OTPStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackViewTests.swift; sourceTree = "<group>"; };
 		EFA63D5328C9808400E3D245 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		EFA63D5528C9809D00E3D245 /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
 		EFA63D5928C980C800E3D245 /* OTPDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPDelegate.swift; sourceTree = "<group>"; };
@@ -45,14 +31,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFA63D4028C9805E00E3D245 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFA63D4428C9805E00E3D245 /* OTPStackView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,7 +38,6 @@
 			isa = PBXGroup;
 			children = (
 				EFA63D3D28C9805E00E3D245 /* OTPStackView */,
-				EFA63D4728C9805E00E3D245 /* OTPStackViewTests */,
 				EFA63D3C28C9805E00E3D245 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				EFA63D3B28C9805E00E3D245 /* OTPStackView.framework */,
-				EFA63D4328C9805E00E3D245 /* OTPStackViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,14 +59,6 @@
 				EFA63D3E28C9805E00E3D245 /* OTPStackView.h */,
 			);
 			path = OTPStackView;
-			sourceTree = "<group>";
-		};
-		EFA63D4728C9805E00E3D245 /* OTPStackViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				EFA63D4828C9805E00E3D245 /* OTPStackViewTests.swift */,
-			);
-			path = OTPStackViewTests;
 			sourceTree = "<group>";
 		};
 		EFA63D5728C980A300E3D245 /* View */ = {
@@ -150,24 +118,6 @@
 			productReference = EFA63D3B28C9805E00E3D245 /* OTPStackView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EFA63D4228C9805E00E3D245 /* OTPStackViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EFA63D5028C9805E00E3D245 /* Build configuration list for PBXNativeTarget "OTPStackViewTests" */;
-			buildPhases = (
-				EFA63D3F28C9805E00E3D245 /* Sources */,
-				EFA63D4028C9805E00E3D245 /* Frameworks */,
-				EFA63D4128C9805E00E3D245 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EFA63D4628C9805E00E3D245 /* PBXTargetDependency */,
-			);
-			name = OTPStackViewTests;
-			productName = OTPStackViewTests;
-			productReference = EFA63D4328C9805E00E3D245 /* OTPStackViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,9 +131,6 @@
 					EFA63D3A28C9805E00E3D245 = {
 						CreatedOnToolsVersion = 13.3.1;
 						LastSwiftMigration = 1330;
-					};
-					EFA63D4228C9805E00E3D245 = {
-						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
@@ -201,20 +148,12 @@
 			projectRoot = "";
 			targets = (
 				EFA63D3A28C9805E00E3D245 /* OTPStackView */,
-				EFA63D4228C9805E00E3D245 /* OTPStackViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EFA63D3928C9805E00E3D245 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFA63D4128C9805E00E3D245 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,23 +174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFA63D3F28C9805E00E3D245 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFA63D4928C9805E00E3D245 /* OTPStackViewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EFA63D4628C9805E00E3D245 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EFA63D3A28C9805E00E3D245 /* OTPStackView */;
-			targetProxy = EFA63D4528C9805E00E3D245 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EFA63D4B28C9805E00E3D245 /* Debug */ = {
@@ -433,40 +356,6 @@
 			};
 			name = Release;
 		};
-		EFA63D5128C9805E00E3D245 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9T3PZX3RQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.intan3951.OTPStackViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EFA63D5228C9805E00E3D245 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9T3PZX3RQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.intan3951.OTPStackViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,15 +373,6 @@
 			buildConfigurations = (
 				EFA63D4E28C9805E00E3D245 /* Debug */,
 				EFA63D4F28C9805E00E3D245 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EFA63D5028C9805E00E3D245 /* Build configuration list for PBXNativeTarget "OTPStackViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EFA63D5128C9805E00E3D245 /* Debug */,
-				EFA63D5228C9805E00E3D245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
