@@ -12,35 +12,50 @@ open class OTPTextField: UITextField {
     weak var previousTextField: OTPTextField?
     weak var nextTextField: OTPTextField?
     
-    public struct Drawing {
-        public var backgroundColor: UIColor = .white
-        public var textColor: UIColor = .black
-        public var cornerRadius: CGFloat = 8
-        public var inactiveBorderWidth: CGFloat = 1
-        public var inactiveBorderColor: UIColor = .lightGray
-        public var activeBorderWidth: CGFloat = 2
-        public var activeBorderColor: UIColor = .cyan
+    public struct Preferences {
+        public struct Drawing {
+            public var backgroundColor: UIColor = .white
+            public var textColor: UIColor = .black
+            public var cornerRadius: CGFloat = 8
+            public var width: CGFloat? = nil
+            public var inactiveBorderWidth: CGFloat = 1
+            public var inactiveBorderColor: UIColor = .lightGray
+            public var activeBorderWidth: CGFloat = 2
+            public var activeBorderColor: UIColor = .cyan
+            
+            public init() { }
+        }
+        
+        public struct TextInputTraits {
+            public var font: UIFont = .systemFont(ofSize: 16)
+            public var textAlignment: NSTextAlignment = .center
+            public var adjustsFontSizeToFitWidth: Bool = false
+            public var keyboardType: UIKeyboardType = .numberPad
+            public var autocorrectionType: UITextAutocorrectionType = .yes
+            
+            public init() { }
+        }
+        
+        public var drawing: Drawing = Drawing()
+        public var textInputTraits: TextInputTraits = TextInputTraits()
+        
+        public init() { }
     }
     
-    public struct TextInputTraits {
-        public var font: UIFont = .systemFont(ofSize: 16)
-        public var textAlignment: NSTextAlignment = .center
-        public var adjustsFontSizeToFitWidth: Bool = false
-        public var keyboardType: UIKeyboardType = .numberPad
-        public var autocorrectionType: UITextAutocorrectionType = .yes
-    }
-    
-    private var drawing: Drawing!
-    private var textInputTraits: TextInputTraits!
+    private var preferences: Preferences!
     
     public convenience init() {
-        self.init(drawing: Drawing(), textInputTraits: TextInputTraits())
+        self.init(preferences: Preferences())
     }
     
-    public init(drawing: Drawing, textInputTraits: TextInputTraits) {
+    public init(preferences: Preferences?) {
         super.init(frame: .zero)
-        self.drawing = drawing
-        self.textInputTraits = textInputTraits
+        
+        if let pref = preferences {
+            self.preferences = pref
+        } else {
+            self.preferences = Preferences()
+        }
         
         self.configureView()
     }
@@ -55,29 +70,29 @@ open class OTPTextField: UITextField {
     }
     
     public func setToActiveStyle() {
-        self.layer.borderColor = self.drawing.activeBorderColor.cgColor
-        self.layer.borderWidth = self.drawing.activeBorderWidth
+        self.layer.borderColor = self.preferences.drawing.activeBorderColor.cgColor
+        self.layer.borderWidth = self.preferences.drawing.activeBorderWidth
     }
     
     public func setToInactiveStyle() {
-        self.layer.borderColor = self.drawing.inactiveBorderColor.cgColor
-        self.layer.borderWidth = self.drawing.inactiveBorderWidth
+        self.layer.borderColor = self.preferences.drawing.inactiveBorderColor.cgColor
+        self.layer.borderWidth = self.preferences.drawing.inactiveBorderWidth
     }
     
     private func configureView() {
         // set drawing settings
-        self.backgroundColor = self.drawing.backgroundColor
-        self.textColor = self.drawing.textColor
-        self.layer.cornerRadius = self.drawing.cornerRadius
-        self.layer.borderWidth = self.drawing.inactiveBorderWidth
-        self.layer.borderColor = self.drawing.inactiveBorderColor.cgColor
+        self.backgroundColor = self.preferences.drawing.backgroundColor
+        self.textColor = self.preferences.drawing.textColor
+        self.layer.cornerRadius = self.preferences.drawing.cornerRadius
+        self.layer.borderWidth = self.preferences.drawing.inactiveBorderWidth
+        self.layer.borderColor = self.preferences.drawing.inactiveBorderColor.cgColor
         
         // set text input traits settings
-        self.font = self.textInputTraits.font
-        self.textAlignment = self.textInputTraits.textAlignment
-        self.adjustsFontSizeToFitWidth = self.textInputTraits.adjustsFontSizeToFitWidth
-        self.keyboardType = self.textInputTraits.keyboardType
-        self.autocorrectionType = self.textInputTraits.autocorrectionType
+        self.font = self.preferences.textInputTraits.font
+        self.textAlignment = self.preferences.textInputTraits.textAlignment
+        self.adjustsFontSizeToFitWidth = self.preferences.textInputTraits.adjustsFontSizeToFitWidth
+        self.keyboardType = self.preferences.textInputTraits.keyboardType
+        self.autocorrectionType = self.preferences.textInputTraits.autocorrectionType
         
         if #available(iOS 12.0, *) {
             self.textContentType = .oneTimeCode

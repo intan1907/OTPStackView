@@ -12,14 +12,22 @@ public class OTPStackView: UIStackView {
     // MARK: Field properties
     private var numberOfFields: Int = 4
     private var textFieldItems: [OTPTextField] = []
-    public weak var delegate: OTPDelegate?
+    private var textFieldPreferences: OTPTextField.Preferences?
+    private weak var delegate: OTPDelegate?
     
     private var remainingStringStack: [String] = []
     
-    public init(numberOfFields: Int = 4, delegate: OTPDelegate?) {
+    public init(
+        numberOfFields: Int = 4,
+        textFieldPreferences: OTPTextField.Preferences = OTPTextField.Preferences(),
+        spacing: CGFloat = 8,
+        delegate: OTPDelegate?
+    ) {
         super.init(frame: .zero)
         
         self.numberOfFields = numberOfFields
+        self.textFieldPreferences = textFieldPreferences
+        self.spacing = spacing
         self.delegate = delegate
         
         self.configureInitialView()
@@ -52,7 +60,6 @@ public class OTPStackView: UIStackView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.contentMode = .center
         self.distribution = .fillEqually
-        self.spacing = 8
     }
     
     private final func clearStack() {
@@ -65,7 +72,7 @@ public class OTPStackView: UIStackView {
     /// Adding each OTPfield to stack view
     private final func addOTPFields() {
         for index in 0..<self.numberOfFields {
-            let field = OTPTextField()
+            let field = OTPTextField(preferences: self.textFieldPreferences)
             self.configureTextField(textField: field)
             self.textFieldItems.append(field)
             
@@ -88,7 +95,11 @@ public class OTPStackView: UIStackView {
         // setup textField constraints
         textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         textField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        if let width = self.textFieldPreferences?.drawing.width {
+            textField.widthAnchor.constraint(equalToConstant: width).isActive = true
+        } else {
+            textField.widthAnchor.constraint(equalTo: textField.heightAnchor).isActive = true
+        }
     }
     
     private final func validateFields() {
