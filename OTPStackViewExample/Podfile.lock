@@ -1,0 +1,22 @@
+PODS:
+  - OTPStackView (1.0.2)
+
+DEPENDENCIES:
+  - OTPStackView (from `https://github.com/intan1907/OTPStackView.git`, tag `1.0.2`)
+
+EXTERNAL SOURCES:
+  OTPStackView:
+    :git: https://github.com/intan1907/OTPStackView.git
+    :tag: 1.0.2
+
+CHECKOUT OPTIONS:
+  OTPStackView:
+    :git: https://github.com/intan1907/OTPStackView.git
+    :tag: 1.0.2
+
+SPEC CHECKSUMS:
+  OTPStackView: 00b18d90fc93ece5e24d53fac7e06820e1c416d0
+
+PODFILE CHECKSUM: d8c5101f48b28e66384aec04f28ef074a13ec9c8
+
+COCOAPODS: 1.11.0.beta.2

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ABDF5792286A60E29F151F6 /* Pods_OTPStackViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEB31CD651010B786AF75F3 /* Pods_OTPStackViewExample.framework */; };
 		EFEEB7AE28CAFC8500011303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEB7AD28CAFC8500011303 /* AppDelegate.swift */; };
 		EFEEB7B028CAFC8500011303 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEB7AF28CAFC8500011303 /* SceneDelegate.swift */; };
 		EFEEB7B228CAFC8500011303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEB7B128CAFC8500011303 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BDCAC2D21B82C9ACA20F718 /* Pods-OTPStackViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTPStackViewExample.release.xcconfig"; path = "Target Support Files/Pods-OTPStackViewExample/Pods-OTPStackViewExample.release.xcconfig"; sourceTree = "<group>"; };
+		2DEB31CD651010B786AF75F3 /* Pods_OTPStackViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OTPStackViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B889FBCD26D961906D39792 /* Pods-OTPStackViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTPStackViewExample.debug.xcconfig"; path = "Target Support Files/Pods-OTPStackViewExample/Pods-OTPStackViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		EFEEB7AA28CAFC8500011303 /* OTPStackViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPStackViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEEB7AD28CAFC8500011303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEEB7AF28CAFC8500011303 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABDF5792286A60E29F151F6 /* Pods_OTPStackViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		439A9B6B90FB93DF77DC1D6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B889FBCD26D961906D39792 /* Pods-OTPStackViewExample.debug.xcconfig */,
+				1BDCAC2D21B82C9ACA20F718 /* Pods-OTPStackViewExample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EFEEB7A128CAFC8500011303 = {
 			isa = PBXGroup;
 			children = (
 				EFEEB7AC28CAFC8500011303 /* OTPStackViewExample */,
 				EFEEB7AB28CAFC8500011303 /* Products */,
+				439A9B6B90FB93DF77DC1D6B /* Pods */,
+				F8A87C9E416CDD6E6476F584 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = OTPStackViewExample;
 			sourceTree = "<group>";
 		};
+		F8A87C9E416CDD6E6476F584 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DEB31CD651010B786AF75F3 /* Pods_OTPStackViewExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFEEB7BE28CAFC8800011303 /* Build configuration list for PBXNativeTarget "OTPStackViewExample" */;
 			buildPhases = (
+				155DD834B20A1FE729AF0971 /* [CP] Check Pods Manifest.lock */,
 				EFEEB7A628CAFC8500011303 /* Sources */,
 				EFEEB7A728CAFC8500011303 /* Frameworks */,
 				EFEEB7A828CAFC8500011303 /* Resources */,
+				725D0D1197206C70B6C4D793 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		155DD834B20A1FE729AF0971 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTPStackViewExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		725D0D1197206C70B6C4D793 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OTPStackViewExample/Pods-OTPStackViewExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OTPStackViewExample/Pods-OTPStackViewExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTPStackViewExample/Pods-OTPStackViewExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EFEEB7A628CAFC8500011303 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		EFEEB7BF28CAFC8800011303 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B889FBCD26D961906D39792 /* Pods-OTPStackViewExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		EFEEB7C028CAFC8800011303 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BDCAC2D21B82C9ACA20F718 /* Pods-OTPStackViewExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

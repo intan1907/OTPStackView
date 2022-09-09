@@ -1,24 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OTPStackViewExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhT-em-9I4">
+                                <rect key="frame" x="16" y="806" width="382" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eXY-m7-bgK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO8-io-Ffs">
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="115.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've asked us to provide you with a 6-digit login code when someone tries to access your account from a new device." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ7-uC-4k5">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you receive your 6-digit code, enter it to continue:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iz-go-2uU">
+                                        <rect key="frame" x="16" y="37" width="382" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="56" translatesAutoresizingMaskIntoConstraints="NO" id="Jos-oL-wmL">
+                                        <rect key="frame" x="16" y="67.5" width="382" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="xzb-lv-Fdt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jos-oL-wmL" secondAttribute="trailing" constant="16" id="0KR-EW-LmR"/>
+                                    <constraint firstItem="Jos-oL-wmL" firstAttribute="top" secondItem="6iz-go-2uU" secondAttribute="bottom" constant="16" id="0TB-ah-Hhf"/>
+                                    <constraint firstItem="6iz-go-2uU" firstAttribute="top" secondItem="sJ7-uC-4k5" secondAttribute="bottom" constant="8" id="77c-ji-2FX"/>
+                                    <constraint firstItem="6iz-go-2uU" firstAttribute="leading" secondItem="iO8-io-Ffs" secondAttribute="leading" constant="16" id="BAt-Wi-Tks"/>
+                                    <constraint firstItem="Jos-oL-wmL" firstAttribute="centerX" secondItem="iO8-io-Ffs" secondAttribute="centerX" id="ENW-5K-rbE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jos-oL-wmL" secondAttribute="bottom" id="RK7-zT-fEg"/>
+                                    <constraint firstAttribute="trailing" secondItem="sJ7-uC-4k5" secondAttribute="trailing" constant="16" id="efO-OS-M1P"/>
+                                    <constraint firstItem="sJ7-uC-4k5" firstAttribute="leading" secondItem="iO8-io-Ffs" secondAttribute="leading" constant="16" id="ehf-BN-LEm"/>
+                                    <constraint firstItem="Jos-oL-wmL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iO8-io-Ffs" secondAttribute="leading" constant="16" id="smd-wW-vch"/>
+                                    <constraint firstItem="sJ7-uC-4k5" firstAttribute="top" secondItem="iO8-io-Ffs" secondAttribute="top" id="xtl-W1-BF6"/>
+                                    <constraint firstAttribute="trailing" secondItem="6iz-go-2uU" secondAttribute="trailing" constant="16" id="z8z-6K-0a2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HhT-em-9I4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iO8-io-Ffs" secondAttribute="bottom" constant="16" id="110-ua-OES"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HhT-em-9I4" secondAttribute="trailing" constant="16" id="Gfa-wK-Joc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HhT-em-9I4" secondAttribute="bottom" constant="16" id="iMC-an-fI6"/>
+                            <constraint firstItem="iO8-io-Ffs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mbN-hL-HC6"/>
+                            <constraint firstItem="HhT-em-9I4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mcF-hO-oBP"/>
+                            <constraint firstItem="iO8-io-Ffs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-56" id="oSd-Hh-oKA"/>
+                            <constraint firstItem="iO8-io-Ffs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="vPe-4O-0Yh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iO8-io-Ffs" secondAttribute="trailing" id="zS9-yl-Fby"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="HhT-em-9I4" id="JJ0-xh-qoS"/>
+                        <outlet property="otpContainerView" destination="Jos-oL-wmL" id="3na-Z7-zcn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
