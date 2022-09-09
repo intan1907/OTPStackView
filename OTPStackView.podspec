@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "OTPStackView"
-  spec.version                = "1.0.1"
+  spec.version                = "1.0.2"
   spec.summary                = "OTPStackView"
   spec.description            = <<-DESC
                                   Customizable UIStackView that consists custom UITextFields for OTP/Security code with AutoFill support.
