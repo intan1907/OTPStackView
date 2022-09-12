@@ -30,7 +30,7 @@ If you prefer not to use Cocoapods, you can integrate OTPStackView into your pro
     let otpView = OTPStackView(numberOfFields: 6, delegate: self)
     self.view.addSubview(otpView)
     ```
-3. Then setup the `OTPDelegate` method.
+3. Then setup the `OTPDelegate` method:
     ```swift
       extension ViewController: OTPDelegate {
           func didChangeValidity(isValid: Bool) {
