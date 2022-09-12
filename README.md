@@ -1,5 +1,5 @@
 # OTPStackView
-Customizable UIStackView that consists custom UITextFields for OTP or Security code with AutoFill support.
+Customizable UIStackView that consists of custom UITextFields for OTP or Security code with AutoFill support.
 
 <p align="center" width="100%">
     <img src="images/basic_utility.gif" alt="Basic OTPStackView utility" title="Preview of the basic utility" width="40%" style="margin-right:5%" />
