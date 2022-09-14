@@ -70,6 +70,6 @@ In order to customize `OTPTextField` appearance and behavior, you can play with 
 |------------------------------|-----------------------|
 | `font`                       | The font of `OTPTextField` (default `UIFont.systemFont(ofSize: 16)`).
 | `textAlignment`              |   The technique for aligning the `OTPTextField`'s text (default `NSTextAlignment.center`).
-| `adjustsFontSizeToFitWidth`  | A Boolean value that determines whether the `OTPTextField` reduces the text’s font size to fit the title string into the `OTPTextField`’s bounding rectangle (default ).
+| `adjustsFontSizeToFitWidth`  | A Boolean value that determines whether the `OTPTextField` reduces the text’s font size to fit the title string into the `OTPTextField`’s bounding rectangle (default `false`).
 | `keyboardType`               | The type of keyboard to display as `OTPTextField`'s input view (default `UIKeyboardType.numberPad`).
 | `autocorrectionType`         | The autocorrection style for `OTPTextField` (default `UITextAutocorrectionType.yes`).
