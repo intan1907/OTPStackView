@@ -9,7 +9,11 @@ import Foundation
 
 public protocol OTPDelegate: NSObject {
     
-    // always triggers when the OTP field is valid
+    /**
+     Always triggers when the `OTPStackView` text is valid.
+     
+     - parameter isValid :  Pass `true` if the OTP fields are filled.
+     */
     func didChangeValidity(isValid: Bool)
     
 }

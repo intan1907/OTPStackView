@@ -9,14 +9,24 @@ import UIKit
 
 public class OTPStackView: UIStackView {
     
-    // MARK: Field properties
+    // MARK: Variables
+    
     private var numberOfFields: Int = 4
     private var textFieldItems: [OTPTextField] = []
     private var textFieldPreferences: OTPTextField.Preferences?
     private weak var delegate: OTPDelegate?
     
-    private var remainingStringStack: [String] = []
+    // MARK: Initializers
     
+    /**
+     Initializes and returns a newly allocated `OTPStackView` object with the specified parameters.
+     
+     - Parameters:
+        - numberOfFields:        The number of `OTPTextField`s in `OTPStackView`.
+        - textFieldPreferences:  The preferences which will configure the `OTPTextField`s.
+        - spacing:               The spacing between `OTPTextField`s.
+        - delegate:              The delegate.
+     */
     public init(
         numberOfFields: Int = 4,
         textFieldPreferences: OTPTextField.Preferences = OTPTextField.Preferences(),
@@ -35,11 +45,18 @@ public class OTPStackView: UIStackView {
         self.addOTPFields()
     }
     
+    /**
+     NSCoding not supported. Use `init(numberOfFields:textFieldPreferences:spacing:delegate:)` instead!
+     */
     public required init(coder: NSCoder) {
-        fatalError("NSCoding not supported. Use init(numberOfFields:delegate:) instead!")
+        fatalError("NSCoding not supported. Use init(numberOfFields:textFieldPreferences:spacing:delegate:) instead!")
     }
     
-    // gives the OTP text
+    // MARK: Public methods
+    
+    /**
+     Returns OTP string from `OTPTextField`s.
+     */
     public final func getOTP() -> String {
         var OTP = ""
         for textField in self.textFieldItems{
@@ -48,12 +65,20 @@ public class OTPStackView: UIStackView {
         return OTP
     }
     
+    /**
+     Clears the text of `OTPTextField`s.
+     */
     public final func clearOTPText() {
         self.textFieldItems.forEach { field in
             field.text = ""
         }
     }
     
+    // MARK: Private methods
+    
+    /**
+     Configures the `OTPStackView` appearance and behavior.
+     */
     private final func configureInitialView() {
         self.backgroundColor = .clear
         self.isUserInteractionEnabled = true
@@ -62,6 +87,9 @@ public class OTPStackView: UIStackView {
         self.distribution = .fillEqually
     }
     
+    /**
+     Removes all `arrangedSubviews` elements from the `OTPStackView`.
+     */
     private final func clearStack() {
         self.arrangedSubviews.forEach { [weak self] vw in
             self?.removeArrangedSubview(vw)
@@ -69,7 +97,9 @@ public class OTPStackView: UIStackView {
         }
     }
     
-    /// Adding each OTPfield to stack view
+    /**
+     Creates a number of `OTPTextField`s and inserts them to the `OTPStackView`.
+     */
     private final func addOTPFields() {
         for index in 0..<self.numberOfFields {
             let field = OTPTextField(preferences: self.textFieldPreferences)
@@ -79,20 +109,23 @@ public class OTPStackView: UIStackView {
             if index == 0 {
                 field.previousTextField = nil
             } else {
-                /// set previous field for current field
+                /// set the previous field of current field
                 field.previousTextField = self.textFieldItems[index-1]
-                /// set next field for field at index-1
+                /// set the next field of field at index-1
                 self.textFieldItems[index-1].nextTextField = field
             }
         }
     }
     
+    /**
+     Configures the delegate and the size of `OTPTextField`.
+     */
     private final func configureTextField(textField: UITextField) {
         textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         self.addArrangedSubview(textField)
         
-        // setup textField constraints
+        /// setup textField constraints
         textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         textField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         if let width = self.textFieldPreferences?.drawing.width {
@@ -102,6 +135,9 @@ public class OTPStackView: UIStackView {
         }
     }
     
+    /**
+     Checks the `OTPTextField`s validity. The OTP is valid if all `OTPTextField`s are filled.
+     */
     private final func validateFields() {
         for field in self.textFieldItems {
             if field.text == "" {
@@ -112,34 +148,45 @@ public class OTPStackView: UIStackView {
         self.delegate?.didChangeValidity(isValid: true)
     }
     
-    /// autofill textfield starting from first
+    /**
+     Fills the `OTPTextField`s with the first specified number of characters of`string`.
+     */
     private final func autoFillTextField(with string: String) {
-        self.remainingStringStack = string.reversed().compactMap { String($0) }
+        var remainingStringStack: [String] = string.reversed().compactMap { String($0) }
         self.textFieldItems.forEach { field in
-            if let charToAdd = self.remainingStringStack.popLast() {
+            if let charToAdd = remainingStringStack.popLast() {
                 field.text = String(charToAdd)
             }
         }
         self.validateFields()
-        self.remainingStringStack = []
     }
     
 }
 
+// MARK: UITextFieldDelegate protocol implementation
+
 extension OTPStackView: UITextFieldDelegate {
     
+    /**
+     Set the `OTPTextField` to active style after it begins the editing.
+     */
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         guard let tf = textField as? OTPTextField else { return }
         tf.setToActiveStyle()
     }
     
+    /**
+     Set the `OTPTextField` to inactive style after it ends the editing.
+     */
     public func textFieldDidEndEditing(_ textField: UITextField) {
         self.validateFields()
         guard let tf = textField as? OTPTextField else { return }
         tf.setToInactiveStyle()
     }
     
-    /// switches between OTPTextfields
+    /**
+     Switches between `OTPTextField`s.
+     */
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let textField = textField as? OTPTextField else { return true }
         

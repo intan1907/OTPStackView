@@ -9,7 +9,11 @@ import UIKit
 
 extension UITextField {
     
-    // limit input to be number only
+    /**
+     Limit input to only number if `keyboardType` equals `UIKeyboardType.numberPad` or `UIKeyboardType.phonePad`
+     
+     - parameter string:    The replacement string for the specified range.
+     */
     func limitNumberOnly(replacementString string: String) -> Bool {
         guard self.keyboardType == .numberPad || self.keyboardType == .phonePad else {
             return true
