@@ -32,11 +32,11 @@ If you prefer not to use Cocoapods, you can integrate OTPStackView into your pro
     ```
 3. Then setup the `OTPDelegate` method:
     ```swift
-      extension ViewController: OTPDelegate {
-          func didChangeValidity(isValid: Bool) {
-              // ...
-          }
-      }
+    extension ViewController: OTPDelegate {
+        func didChangeValidity(isValid: Bool) {
+            // ...
+        }
+    }
     ```
 
 ## Customization
