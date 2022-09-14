@@ -117,7 +117,7 @@ open class OTPTextField: UITextField {
     // MARK: Private methods
     
     /**
-     Set `OTPTextField` appearance based on `preferences`.
+     Set `OTPTextField` appearance and behavior based on `preferences`.
      */
     private func configureView() {
         /// set drawing settings
