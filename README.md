@@ -21,16 +21,16 @@ pod 'OTPStackView',
 If you prefer not to use Cocoapods, you can integrate OTPStackView into your project manually.
 
 ## Usage
-1. First, import the library:
+1. First, import the library.
     ```swift
     import OTPStackView
     ```
-2. Create the `OTPStackView`, specify your `numberOfFields` value:
+2. Create the `OTPStackView`, specify your `numberOfFields` value.
     ```swift
     let otpView = OTPStackView(numberOfFields: 6, delegate: self)
     view.addSubview(otpView)
     ```
-3. Then setup the `OTPDelegate` method:
+3. Then setup the `OTPDelegate` method. Parameter `isValid` determines whether the OTP fields are filled.
     ```swift
     extension ViewController: OTPDelegate {
         func didChangeValidity(isValid: Bool) {
@@ -38,7 +38,7 @@ If you prefer not to use Cocoapods, you can integrate OTPStackView into your pro
         }
     }
     ```
-4. To get the OTP string, use this method:
+4. To get the OTP string, use `getOTP()` method.
     ```swift
     let otpString = otpView.getOTP()
     ```
