@@ -28,7 +28,7 @@ If you prefer not to use Cocoapods, you can integrate OTPStackView into your pro
 2. Create the `OTPStackView`, specify your `numberOfFields` value:
     ```swift
     let otpView = OTPStackView(numberOfFields: 6, delegate: self)
-    self.view.addSubview(otpView)
+    view.addSubview(otpView)
     ```
 3. Then setup the `OTPDelegate` method:
     ```swift
@@ -37,6 +37,10 @@ If you prefer not to use Cocoapods, you can integrate OTPStackView into your pro
             // ...
         }
     }
+    ```
+4. To get the OTP string, use this method:
+    ```swift
+    let otpString = otpView.getOTP()
     ```
 
 ## Customization
@@ -69,7 +73,7 @@ In order to customize `OTPTextField` appearance and behavior, you can play with 
 | `TextInputTraits` Attribute  | Description           |
 |------------------------------|-----------------------|
 | `font`                       | The font of `OTPTextField` (default `UIFont.systemFont(ofSize: 16)`).
-| `textAlignment`              |   The technique for aligning the `OTPTextField`'s text (default `NSTextAlignment.center`).
+| `textAlignment`              | The technique for aligning the `OTPTextField`'s text (default `NSTextAlignment.center`).
 | `adjustsFontSizeToFitWidth`  | A Boolean value that determines whether the `OTPTextField` reduces the text’s font size to fit the title string into the `OTPTextField`’s bounding rectangle (default `false`).
 | `keyboardType`               | The type of keyboard to display as `OTPTextField`'s input view (default `UIKeyboardType.numberPad`).
 | `autocorrectionType`         | The autocorrection style for `OTPTextField` (default `UITextAutocorrectionType.yes`).
